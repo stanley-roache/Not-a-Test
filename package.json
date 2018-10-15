@@ -5,13 +5,20 @@
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
+    "enzyme": "3.7.0",
+    "enzyme-adapter-react-16": "1.6.0",
+    "enzyme-to-json": "3.3.4",
+    "jest": "23.6.0",
+    "jest-enzyme": "7.0.0",
+    "jest-styled-components": "6.2.1",
     "ramda": "0.25.0",
     "ramda-adjunct": "2.10.0",
     "react": "16.5.2",
     "react-dom": "16.5.2",
     "react-redux": "5.0.7",
     "react-scripts": "2.0.3",
-    "redux": "4.0.0"
+    "redux": "4.0.0",
+    "styled-components": "4.0.0"
   },
   "devDependencies": {},
   "scripts": {
@@ -19,6 +26,19 @@
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
     "eject": "react-scripts eject"
+  },
+  "jest": {
+    "collectCoverageFrom": [
+      "!src/registerServiceWorker.js",
+      "!src/index.js",
+      "!src/components/index.js",
+      "!src/utilities/index.js",
+      "src/**/*.{js,jsx}",
+      "!<rootDir>/node_modules/"
+    ],
+    "snapshotSerializers": [
+      "enzyme-to-json/serializer"
+    ]
   },
   "browserslist": [
     ">0.2%",
